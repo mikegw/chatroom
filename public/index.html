@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="serialize_json.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="javascripts/chat.js" type="text/javascript" charset="utf-8"></script>
+    <script src="javascripts/chat_ui.js" type="text/javascript" charset="utf-8"></script>
+
+  </head>
+
+  <body>
+    <h1>Index</h1>
+    <section class="content-container">
+      <section class="message-display">
+        <ul></ul>
+      </section>
+      <form class="new-message">
+        <label for="message-text">Enter a new message</label>
+        <input type="text" id="message-text" name="message">
+        <input type="submit" value="Send">
+      </form>
+      <section class="notifications">
+        <ul></ul>
+      </section>
+    </section>
+  </body>
+
+</html>
