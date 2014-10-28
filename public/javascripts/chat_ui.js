@@ -67,23 +67,28 @@
       console.log("notifications:", this.$notifications)
 
       setTimeout(function () {
-        this.$notifications.first().remove()
+        this.$notifications.find("li").first().remove()
       }.bind(this), 3000);
     };
 
     this.receiveMessage = function(msg) {
       console.log("received", msg)
-      $toDisplay = "<li>" + "(" + this.time() + ")  " + msg.guestName + ": " + msg.text + "</li>"
-      this.$msgDisplay.append($toDisplay);
+      toDisplay = '<li><span class="user-name">' + msg.guestName + ": " +
+                      '</span><span class="text">' + msg.text +
+                      '</span><span class="time">' + this.time() + "</span></li>"
+      this.addToScreen(toDisplay);
+
     };
 
     this.nameChange = function (change) {
       if(change.success) {
         console.log("nameChange", change);
-        $toDisplay = '<li class="event">' + change.oldName + ' is now ' + change.newName + "</li>";
-        this.$msgDisplay.append($toDisplay);
+        toDisplay = '<li class="event">' + change.oldName + ' is now ' + change.newName + "</li>";
+        this.addToScreen(toDisplay);
       } else {
-        console.log("nameChange", change, "failed!");
+        var $msgError = $('<li class="error">' + change.message + "</li>")
+
+        this.notify($msgError);
       }
     }
 
@@ -93,8 +98,17 @@
 
     this.time = function() {
       date = new Date();
-      return date.getHours() + ":" + date.getMinutes();
+      return this.pad(date.getHours(), 2) + ":" + this.pad(date.getMinutes(), 2);
     }
+
+    this.pad = function(num, digits) {
+      return (Array(digits + 1).join("0") + num).slice(-digits);
+    };
+
+    this.addToScreen = function (message) {
+      this.$msgDisplay.append(message);
+      $(".message-display")[0].scrollTop = $(".message-display")[0].scrollHeight;
+    };
 
     this.initialize();
 

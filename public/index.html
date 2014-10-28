@@ -6,23 +6,35 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="javascripts/chat.js" type="text/javascript" charset="utf-8"></script>
     <script src="javascripts/chat_ui.js" type="text/javascript" charset="utf-8"></script>
-
+    <link rel="stylesheet" href="stylesheet.css" type="text/css" media="screen" title="no title" charset="utf-8">
   </head>
 
   <body>
-    <h1>Index</h1>
+    <h1>Chatroom</h1>
+
     <section class="content-container">
       <section class="message-display">
         <ul></ul>
       </section>
-      <form class="new-message">
-        <label for="message-text">Enter a new message</label>
-        <input type="text" id="message-text" name="message">
-        <input type="submit" value="Send">
-      </form>
-      <section class="notifications">
+
+      <section class="new-message-container">
+        <h2>Enter a new message </h2>
+        <feature class="img-container">
+          <img class="sprite1" src="pokemon.png" width="1600" height="1280" alt="Pokemon">
+        </feature>
+        <feature class="img-container">
+          <img class="sprite2" src="pokemon.png" width="1600" height="1280" alt="Pokemon">
+        </feature>
+        <form class="new-message">
+          <input class="new-message-text", type="text" id="message-text" name="message">
+          <input class="button" type="submit" value="Send">
+        </form>
+      </section>
+
+      <section class="notifications notifications-active">
         <ul></ul>
       </section>
+
     </section>
   </body>
 

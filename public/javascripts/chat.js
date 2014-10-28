@@ -16,7 +16,7 @@
     };
 
     this.handle = function (msg) {
-      var task = msg.split("%20");
+      var task = msg.split(" ");
       if(task.length > 2) {
         return {
           success: false,
@@ -28,6 +28,13 @@
         case "/nick":
           console.log("tried to change nickname to", task[1]);
           this.socket.emit("nicknameChangeRequest", {newName: task[1]});
+          return {
+            success: true,
+            notification: "Changing nickname to " + task[1] + "..."
+          };
+        case "/steal":
+          console.log("tried to change nickname to", task[1]);
+          this.socket.emit("nicknameChangeRequest", {newName: task[1], forced: true});
           return {
             success: true,
             notification: "Changing nickname to " + task[1] + "..."

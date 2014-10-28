@@ -1,0 +1,163 @@
+html, head, body, h1, h2, section, ul, li, form, input, input button, label, feature {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  font-family: sans-serif;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  background: LightGrey;
+}
+
+.img-container {
+  position: relative;
+  float: right;
+  height: 64px;
+  width: 64px;
+  overflow: hidden;
+}
+
+.sprite1 {
+  position: absolute;
+  top: -64px;
+  left: -128px;
+}
+
+.sprite2 {
+  position: absolute;
+  top: -192px;
+  left: -128px;
+}
+
+body {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  margin: 100px;
+  border: 5px solid LightGrey;
+  background: white;
+  padding: 3%;
+}
+
+h1 {
+  position: absolute;
+  top: 1%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 5px;
+  font-size: 30px;
+}
+
+.content-container {
+  position: absolute;
+  top: 70px;
+  bottom: 10px;
+  left:10px;
+  right: 10px;
+  border: 2px solid grey;
+  overflow: hidden;
+}
+
+.message-display {
+  height: 70%;
+  border-bottom: 2px solid grey;
+  overflow-y: auto;
+}
+
+.message-display ul {
+  padding: 10px;
+}
+
+.message-display ul li {
+  padding: 5px;
+  border-bottom: 1px solid #aaa;
+}
+
+.user-name {
+  margin-right: 10px;
+  color: #666;
+}
+
+.time {
+  float: right;
+  margin-right: 10px;
+  color: #AAA;
+}
+
+.new-message-container {
+  position: absolute;
+  top: 70%;
+  bottom: 10%;
+  height: 20%;
+}
+
+
+
+.new-message {
+  float: left;
+}
+
+.new-message-container h2 {
+  margin: 10px;
+  overflow-y: auto;
+}
+
+.new-message-text {
+  color: #555;
+  float:left;
+  border: 2px solid grey;
+  border-radius: 5px 0 0 5px;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.new-message .button {
+  padding: 5px;
+  border-right: 2px solid grey;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  border-radius: 0 5px 5px 0;
+  float: left;
+
+}
+
+.notifications {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #555;
+  float:left;
+  height: 10%;
+  padding: 5px;
+  border-top: 2px solid grey;
+  overflow-y: auto;
+}
+
+.notifications ul {
+  padding: 5px;
+}
+.notifications li {
+  padding: 5px;
+}
+
+.notification {
+  color: Green;
+}
+
+.error {
+  color: DarkRed;
+}
