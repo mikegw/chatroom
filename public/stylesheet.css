@@ -1,4 +1,4 @@
-html, head, body, h1, h2, section, ul, li, form, input, input button, label, feature {
+html, head, body, h1, h2, h3, section, ul, li, form, input, input button, label, feature {
   margin: 0;
   border: 0;
   padding: 0;
@@ -16,27 +16,15 @@ ul {
 }
 
 html {
-  background: LightGrey;
+  background: #aaa;
 }
 
 .img-container {
   position: relative;
-  float: right;
-  height: 64px;
-  width: 64px;
+  float: left;
+  height: 48px;
+  width: 48px;
   overflow: hidden;
-}
-
-.sprite1 {
-  position: absolute;
-  top: -64px;
-  left: -128px;
-}
-
-.sprite2 {
-  position: absolute;
-  top: -192px;
-  left: -128px;
 }
 
 body {
@@ -45,10 +33,42 @@ body {
   left: 10px;
   right: 10px;
   bottom: 10px;
-  margin: 100px;
+  margin: 0px;
   border: 5px solid LightGrey;
-  background: white;
+  background: LightGrey;
   padding: 3%;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 30%;
+  bottom: 0;
+
+  border: 2px solid #555;
+  padding: 10px;
+
+}
+
+.sidebar{
+  position: absolute;
+  top: 0;
+  right: 70%;
+  left: 0;
+  bottom: 0;
+
+  border-top: 2px solid #555;
+  border-bottom: 2px solid #555;
+  border-left: 2px solid #555;
+
+}
+
+.sidebar h3 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid #555;
+  padding: 10px 0;
 }
 
 h1 {
@@ -62,6 +82,7 @@ h1 {
 }
 
 .content-container {
+  background: white;
   position: absolute;
   top: 70px;
   bottom: 10px;
@@ -82,16 +103,30 @@ h1 {
 }
 
 .message-display ul li {
+  position: relative;
+  height: 50px;
   padding: 5px;
   border-bottom: 1px solid #aaa;
 }
 
 .user-name {
+  position: absolute;
+  top: 15px;
+  left: 60px;
   margin-right: 10px;
   color: #666;
 }
 
+.text {
+  position: absolute;
+  top: 15px;
+  left: 150px;
+}
+
 .time {
+  position: absolute;
+  top: 15px;
+  right: 15px;
   float: right;
   margin-right: 10px;
   color: #AAA;

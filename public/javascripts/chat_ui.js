@@ -18,6 +18,8 @@
       this.$newMessage = $(".new-message");
       this.$msgDisplay = $(".message-display ul");
       this.$notifications = $(".notifications ul");
+      this.$style = $("style");
+
 
       console.log("message form:", this.$newMessage)
 
@@ -25,6 +27,13 @@
 
       this.chatSocket.on("message", this.receiveMessage.bind(this))
       this.chatSocket.on("nicknameChangeResult", this.nameChange.bind(this))
+      this.chatSocket.on("recent", (function (event) {
+        console.log("event", event)
+        for(msg in event.messages){
+          console.log(msg)
+          this.receiveMessage(msg)
+        }
+      }).bind(this))
     };
 
     this.getMessage = function () {
@@ -73,9 +82,23 @@
 
     this.receiveMessage = function(msg) {
       console.log("received", msg)
-      toDisplay = '<li><span class="user-name">' + msg.guestName + ": " +
-                      '</span><span class="text">' + msg.text +
-                      '</span><span class="time">' + this.time() + "</span></li>"
+
+      var toDisplay =  '<li>';
+      toDisplay += '<feature class="img-container">';
+      toDisplay +=   '<img class="sprite' + msg.userId + '" src="pokemon.png" width="1200" height="960" alt="Pokemon">'
+      toDisplay += '</feature>';
+      toDisplay +=   '<span class="user-name">' + msg.guestName + ':' +'</span>';
+      toDisplay +=   '<span class="text">' + msg.text + '</span>';
+      toDisplay +=   '<span class="time">' + this.time() + '</span>';
+      toDisplay += '</li>';
+
+      this.$style.append(
+        ".sprite" + msg.userId +
+        " {position: absolute; top: -" +
+        (48 * Math.floor(msg.userId / 25)) +
+        "px; left: -" +
+        (48 * (msg.userId % 25)) +
+        "px;}");
       this.addToScreen(toDisplay);
 
     };
