@@ -30,8 +30,8 @@
       this.chatSocket.on("recent", (function (event) {
         console.log("event", event)
         for(msg in event.messages){
-          console.log(msg)
-          this.receiveMessage(msg)
+          console.log(event.messages[msg])
+          this.receiveMessage(event.messages[msg])
         }
       }).bind(this))
     };
