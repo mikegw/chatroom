@@ -17,5 +17,10 @@
 
   "scripts": {
     "start": "node lib/app.js"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git@heroku.com:infinite-ravine-2814.git"
   }
 }
